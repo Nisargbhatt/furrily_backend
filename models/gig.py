@@ -14,13 +14,14 @@ class Gig(DynamicDocument):
     """
     title = StringField()
     description = StringField()
+    banners = ListField(default=[])
     price = StringField()
     attachments = ListField(default=[])
     postedBy = ReferenceField(User)
     time = IntField()
     skills = ListField()
     categories = ListField()
-    successRate = IntField()
+    average_ratings = IntField(default=0)
 
 class Order(EmbeddedDocument):
     """

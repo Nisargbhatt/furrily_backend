@@ -26,6 +26,7 @@ class UserRatings(DynamicDocument):
     feedback = StringField()
     client = GenericReferenceField()
     gig = GenericReferenceField()
+    date = DateTimeField(default=datetime.now())
 
 class UserPortfolio(EmbeddedDocument):
     """
@@ -59,17 +60,17 @@ class User(DynamicDocument):
     average_ratings = IntField()
     postings_count = IntField()
     notification_count = IntField()
-    address = StringField()
     country = StringField()
     city = StringField()
     state = StringField()
-    zipcode = StringField()
     portfolioLinks = ListField(EmbeddedDocumentField(ProfileLinks), default=[])
     portfolio = ListField(EmbeddedDocumentField(UserPortfolio), default=[])
     profileCompleteness = IntField(default=45)
-    bio = StringField()
-    langauges = ListField()
+    bio = StringField(default='Hello there I am a furry artist.')
+    langauges = ListField(default=[])
     skills = ListField(default=[])
+    zipcode = IntField()
+    phone_number =  StringField()
 
     def encrypt_set_password(self, password):
         self.password = pwd_context.encrypt(password)
@@ -78,9 +79,10 @@ class User(DynamicDocument):
     @staticmethod
     def authenticate(email, password):
         user = User.objects(email = email).first()
-        user.id = str(user.id)
-        if pwd_context.verify(password, user.password):
-            return user
+        if user:
+            user.id = str(user.id)
+            if pwd_context.verify(password, user.password):
+                return user
         return None
 
     @staticmethod

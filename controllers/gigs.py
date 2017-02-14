@@ -20,6 +20,7 @@ def post_gig():
     parser.add_argument('time', required=True, help='title is required')
     parser.add_argument('skills', required=True, help='skills', type=list)
     parser.add_argument('categories', required=True, help='categories', type=list)
+    parser.add_argument('banners', required=True, help='categories', type=list)
 
     args = parser.parse_args()
     gig = GigModule.Gig()
@@ -37,18 +38,19 @@ def update_gig():
     user = current_identity
     parser = RequestParser()
     parser.add_argument('objectId', required=True, help='objectId is required')
-    parser.add_argument('title', help='title is required')
-    parser.add_argument('description', help='title is required')
-    parser.add_argument('price', help='price is required', type=str)
-    parser.add_argument('attachments',  type=list)
-    parser.add_argument('time', help='title is required')
-    parser.add_argument('skills', help='skills', type=list)
-    parser.add_argument('categories', help='categories', type=list)
+    parser.add_argument('title', )
+    parser.add_argument('description')
+    parser.add_argument('price', type=str)
+    parser.add_argument('attachments', type=list)
+    parser.add_argument('time')
+    parser.add_argument('skills', type=list)
+    parser.add_argument('categories', type=list)
+    parser.add_argument('banners', type=list)
 
     args = parser.parse_args()
     gig = GigModule.Gig.objects(id=args['objectId']).first()
     for argument in args:
-        if argument != objectId:
+        if argument != args['objectId']:
             gig[argument] = args[argument]
 
     gig.save()
@@ -69,7 +71,9 @@ def gigs_by_id(id):
             "attachments" : g["attachments"],
             "time" : g["time"],
             "skills" : g["skills"],
-            "categories" : g["categories"]
+            "categories" : g["categories"],
+            "banners" : g['banners'],
+            'average_ratings' : g['average_ratings']
         })
     return jsonify({"response" : responseObject})
 
@@ -88,12 +92,11 @@ def review_gig(id):
     ratings.save()
     return jsonify({'response' : 'ratings added'})
 
-@gigs.route('/api/review/<id>', methods=['GET'])
-def get_reviews(id):
-    import pdb; pdb.set_trace()
+@gigs.route('/api/gig/review/<id>', methods=['GET'])
+def get_reviews_by_id(id):
     # my_gigs = list(map(lambda x: x.id, GigModule.Gig.objects(postedBy=id)))
-    my_gigs = GigModule.Gig.objects(postedBy=id)
-    ratings = UserModule.UserRatings.objects(gig__in = my_gigs)
+    gig = GigModule.Gig.objects(id=id).first()
+    ratings = UserModule.UserRatings.objects(gig = gig)
     responseObject = []
     for r in ratings:
         responseObject.append({
@@ -103,6 +106,32 @@ def get_reviews(id):
                },
                "feedback" : r.feedback,
                "count" : r.count,
+               "gig" : {
+                   "id" : str(r.gig.id),
+                   "title" : r.gig.title,
+                   "description" : r.gig.description,
+                   "price" : r.gig.price
+               }
+        })
+    return jsonify({'response' : responseObject})
+
+
+@gigs.route('/api/user/review/<id>', methods=['GET'])
+def get_reviews_by_user(id):
+    # my_gigs = list(map(lambda x: x.id, GigModule.Gig.objects(postedBy=id)))
+    my_gigs = GigModule.Gig.objects(postedBy=id)
+    ratings = UserModule.UserRatings.objects(gig__in = my_gigs)
+    responseObject = []
+    for r in ratings:
+        responseObject.append({
+               "client" : {
+                    'id' : str(r.client.id),
+                    'name' : r.client.firstname + " " + r.client.lastname,
+                    'profilePicture' : r.client.profilePicture
+               },
+               "feedback" : r.feedback,
+               "count" : r.count,
+               "date" : r.date,
                "gig" : {
                    "id" : str(r.gig.id),
                    "title" : r.gig.title,
@@ -135,6 +164,7 @@ def me_wishlist():
         responseObject.append({
             'id' : str(w.gig.id),
             'title' : w.gig.title,
+            'banners' : w.gig.banners,
             'description' : w.gig.description,
             'postedBy' : {
                 'id' : str(w.gig.postedBy.id),
@@ -171,6 +201,7 @@ def me_cart():
             'id' : str(w.gig.id),
             'title' : w.gig.title,
             'description' : w.gig.description,
+            'banners' : w.gig.banners,
             'postedBy' : {
                 'id' : str(w.gig.postedBy.id),
                 'name' : str(w.gig.postedBy.firstname + " " + w.gig.postedBy.lastname),

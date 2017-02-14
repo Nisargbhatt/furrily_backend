@@ -1,0 +1,168 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Blueprint	controllers/auth.py	/^from flask import Blueprint, jsonify$/;"	kind:namespace	line:1
+Blueprint	controllers/gigs.py	/^from flask import Blueprint, jsonify$/;"	kind:namespace	line:1
+Blueprint	controllers/user.py	/^from flask import Blueprint, jsonify$/;"	kind:namespace	line:1
+BooleanField	models/gig.py	/^from mongoengine import StringField, IntField, ListField, DateTimeField, ReferenceField, BooleanField$/;"	kind:namespace	line:6
+BooleanField	models/user.py	/^from mongoengine import BooleanField$/;"	kind:namespace	line:8
+CORS	app.py	/^from flask_cors import CORS$/;"	kind:namespace	line:10
+DateTimeField	models/gig.py	/^from mongoengine import StringField, IntField, ListField, DateTimeField, ReferenceField, BooleanField$/;"	kind:namespace	line:6
+DateTimeField	models/user.py	/^from mongoengine import StringField, IntField, EmbeddedDocumentField, ListField, DateTimeField$/;"	kind:namespace	line:7
+DynamicDocument	models/gig.py	/^from mongoengine import DynamicDocument, EmbeddedDocument$/;"	kind:namespace	line:5
+DynamicDocument	models/user.py	/^from mongoengine import DynamicDocument, EmbeddedDocument$/;"	kind:namespace	line:6
+EmbeddedDocument	models/gig.py	/^from mongoengine import DynamicDocument, EmbeddedDocument$/;"	kind:namespace	line:5
+EmbeddedDocument	models/user.py	/^from mongoengine import DynamicDocument, EmbeddedDocument$/;"	kind:namespace	line:6
+EmbeddedDocumentField	models/user.py	/^from mongoengine import StringField, IntField, EmbeddedDocumentField, ListField, DateTimeField$/;"	kind:namespace	line:7
+Flask	app.py	/^from flask import Flask, jsonify, request$/;"	kind:namespace	line:9
+GenericReferenceField	models/user.py	/^from mongoengine import GenericReferenceField$/;"	kind:namespace	line:9
+Gig	models/gig.py	/^class Gig(DynamicDocument):$/;"	kind:class	line:11
+GigModule	controllers/gigs.py	/^from models import gig as GigModule$/;"	kind:namespace	line:6
+IntField	models/gig.py	/^from mongoengine import StringField, IntField, ListField, DateTimeField, ReferenceField, BooleanField$/;"	kind:namespace	line:6
+IntField	models/user.py	/^from mongoengine import StringField, IntField, EmbeddedDocumentField, ListField, DateTimeField$/;"	kind:namespace	line:7
+JWT	app.py	/^from flask_jwt import JWT$/;"	kind:namespace	line:11
+JWT	controllers/auth.py	/^from flask_jwt import JWT, jwt_required, current_identity$/;"	kind:namespace	line:2
+JWT	controllers/gigs.py	/^from flask_jwt import JWT, jwt_required, current_identity$/;"	kind:namespace	line:2
+JWT	controllers/user.py	/^from flask_jwt import JWT, jwt_required, current_identity$/;"	kind:namespace	line:2
+ListField	models/gig.py	/^from mongoengine import StringField, IntField, ListField, DateTimeField, ReferenceField, BooleanField$/;"	kind:namespace	line:6
+ListField	models/user.py	/^from mongoengine import StringField, IntField, EmbeddedDocumentField, ListField, DateTimeField$/;"	kind:namespace	line:7
+NotUniqueError	controllers/auth.py	/^from mongoengine import NotUniqueError$/;"	kind:namespace	line:4
+Order	models/gig.py	/^class Order(EmbeddedDocument):$/;"	kind:class	line:26
+PROFILE_PICTURE	constants.py	/^PROFILE_PICTURE = 'http:\/\/www.lovemarks.com\/wp-content\/uploads\/profile-avatars\/default-avatar.png'/;"	kind:variable	line:3
+ProfileLinks	models/user.py	/^class ProfileLinks(EmbeddedDocument):$/;"	kind:class	line:42
+ReferenceField	models/gig.py	/^from mongoengine import StringField, IntField, ListField, DateTimeField, ReferenceField, BooleanField$/;"	kind:namespace	line:6
+RequestParser	controllers/auth.py	/^from flask_reqparse import RequestParser$/;"	kind:namespace	line:3
+RequestParser	controllers/gigs.py	/^from flask_reqparse import RequestParser$/;"	kind:namespace	line:3
+RequestParser	controllers/user.py	/^from flask_reqparse import RequestParser$/;"	kind:namespace	line:3
+SECRET_KEY	app.py	/^from constants import SECRET_KEY$/;"	kind:namespace	line:16
+SECRET_KEY	constants.py	/^SECRET_KEY = 'FURRILYSMIT'$/;"	kind:variable	line:1
+StringField	models/gig.py	/^from mongoengine import StringField, IntField, ListField, DateTimeField, ReferenceField, BooleanField$/;"	kind:namespace	line:6
+StringField	models/user.py	/^from mongoengine import StringField, IntField, EmbeddedDocumentField, ListField, DateTimeField$/;"	kind:namespace	line:7
+User	models/gig.py	/^from .user import User$/;"	kind:namespace	line:9
+User	models/user.py	/^class User(DynamicDocument):$/;"	kind:class	line:51
+UserCart	models/user.py	/^class UserCart(DynamicDocument):$/;"	kind:class	line:12
+UserModule	controllers/auth.py	/^from models import user as UserModule$/;"	kind:namespace	line:6
+UserModule	controllers/gigs.py	/^from models import user as UserModule$/;"	kind:namespace	line:5
+UserModule	controllers/user.py	/^from models import user as UserModule$/;"	kind:namespace	line:5
+UserPortfolio	models/user.py	/^class UserPortfolio(EmbeddedDocument):$/;"	kind:class	line:31
+UserRatings	models/user.py	/^class UserRatings(DynamicDocument):$/;"	kind:class	line:21
+UserWishList	models/user.py	/^class UserWishList(DynamicDocument):$/;"	kind:class	line:17
+__init__.py	controllers/__init__.py	1;"	kind:file	line:1
+__init__.py	models/__init__.py	1;"	kind:file	line:1
+add_to_cart	controllers/gigs.py	/^def add_to_cart(id):$/;"	kind:function	line:181
+add_to_wishlist	controllers/gigs.py	/^def add_to_wishlist(id):$/;"	kind:function	line:146
+api_upload_file	app.py	/^def api_upload_file():$/;"	kind:function	line:40
+app	app.py	/^app = Flask(__name__)$/;"	kind:variable	line:19
+app.py	app.py	1;"	kind:file	line:1
+attachments	models/gig.py	/^    attachments = ListField(default=[])$/;"	kind:variable	line:19
+attachments	models/user.py	/^    attachments = ListField()$/;"	kind:variable	line:37
+auth	app.py	/^from controllers import auth, user as userController, gigs as gigsController$/;"	kind:namespace	line:15
+auth	controllers/auth.py	/^auth = Blueprint('auth', __name__)$/;"	kind:variable	line:8
+auth.py	controllers/auth.py	1;"	kind:file	line:1
+authenticate	models/user.py	/^    def authenticate(email, password):$/;"	kind:member	line:80
+average_ratings	models/gig.py	/^    average_ratings = IntField(default=0)$/;"	kind:variable	line:24
+average_ratings	models/user.py	/^    average_ratings = IntField()$/;"	kind:variable	line:60
+banners	models/gig.py	/^    banners = ListField(default=[])$/;"	kind:variable	line:17
+bio	models/user.py	/^    bio = StringField(default='Hello there I am a furry artist.')$/;"	kind:variable	line:69
+boto3	app.py	/^import boto3$/;"	kind:namespace	line:12
+categories	models/gig.py	/^    categories = ListField()$/;"	kind:variable	line:23
+change_password	controllers/user.py	/^def change_password():$/;"	kind:function	line:65
+city	models/user.py	/^    city = StringField()$/;"	kind:variable	line:64
+client	models/gig.py	/^    client = ReferenceField(User)$/;"	kind:variable	line:30
+client	models/user.py	/^    client = GenericReferenceField()$/;"	kind:variable	line:27
+connect	connector.py	/^from mongoengine import connect$/;"	kind:namespace	line:1
+connection	connector.py	/^from constants import connection$/;"	kind:namespace	line:3
+connection	constants.py	/^connection = 'mongodb:\/\/smitthakkar96:smit40026@ds137139.mlab.com:37139\/furrily'$/;"	kind:variable	line:2
+connector	app.py	/^import connector$/;"	kind:namespace	line:17
+connector.py	connector.py	1;"	kind:file	line:1
+constants	controllers/user.py	/^import constants$/;"	kind:namespace	line:6
+constants.py	constants.py	1;"	kind:file	line:1
+count	models/user.py	/^    count = IntField()$/;"	kind:variable	line:25
+country	models/user.py	/^    country = StringField()$/;"	kind:variable	line:63
+current_identity	controllers/auth.py	/^from flask_jwt import JWT, jwt_required, current_identity$/;"	kind:namespace	line:2
+current_identity	controllers/gigs.py	/^from flask_jwt import JWT, jwt_required, current_identity$/;"	kind:namespace	line:2
+current_identity	controllers/user.py	/^from flask_jwt import JWT, jwt_required, current_identity$/;"	kind:namespace	line:2
+date	models/user.py	/^    date = DateTimeField(default=datetime.now())$/;"	kind:variable	line:29
+date	models/user.py	/^    date = DateTimeField(default=datetime.now())$/;"	kind:variable	line:39
+datetime	models/user.py	/^from datetime import datetime$/;"	kind:namespace	line:4
+description	models/gig.py	/^    description = StringField()$/;"	kind:variable	line:16
+description	models/user.py	/^    description = StringField(default=None)$/;"	kind:variable	line:38
+edit_profile	controllers/user.py	/^def edit_profile():$/;"	kind:function	line:13
+email	models/user.py	/^    email = StringField(unique=True)$/;"	kind:variable	line:57
+encrypt_set_password	models/user.py	/^    def encrypt_set_password(self, password):$/;"	kind:member	line:75
+feedback	models/user.py	/^    feedback = StringField()$/;"	kind:variable	line:26
+firstname	models/user.py	/^    firstname = StringField()$/;"	kind:variable	line:55
+generate_file_name	app.py	/^def generate_file_name():$/;"	kind:function	line:48
+get_file_extension	app.py	/^def get_file_extension(filename):$/;"	kind:function	line:51
+get_reviews_by_id	controllers/gigs.py	/^def get_reviews_by_id(id):$/;"	kind:function	line:96
+get_reviews_by_user	controllers/gigs.py	/^def get_reviews_by_user(id):$/;"	kind:function	line:120
+getuser_byId	controllers/user.py	/^def getuser_byId(id):$/;"	kind:function	line:80
+gig	models/gig.py	/^    gig = ReferenceField(Gig)$/;"	kind:variable	line:31
+gig	models/user.py	/^    gig = GenericReferenceField()$/;"	kind:variable	line:14
+gig	models/user.py	/^    gig = GenericReferenceField()$/;"	kind:variable	line:19
+gig	models/user.py	/^    gig = GenericReferenceField()$/;"	kind:variable	line:28
+gig.py	models/gig.py	1;"	kind:file	line:1
+gigs	controllers/gigs.py	/^gigs = Blueprint('gig', __name__)$/;"	kind:variable	line:8
+gigs.py	controllers/gigs.py	1;"	kind:file	line:1
+gigsController	app.py	/^from controllers import auth, user as userController, gigs as gigsController$/;"	kind:namespace	line:15
+gigs_by_id	controllers/gigs.py	/^def gigs_by_id(id):$/;"	kind:function	line:63
+identity	models/user.py	/^    def identity(payload):$/;"	kind:member	line:89
+image	models/user.py	/^    image = ListField()$/;"	kind:variable	line:36
+isActive	models/gig.py	/^    isActive = BooleanField(default=False)$/;"	kind:variable	line:32
+jsonify	app.py	/^from flask import Flask, jsonify, request$/;"	kind:namespace	line:9
+jsonify	controllers/auth.py	/^from flask import Blueprint, jsonify$/;"	kind:namespace	line:1
+jsonify	controllers/gigs.py	/^from flask import Blueprint, jsonify$/;"	kind:namespace	line:1
+jsonify	controllers/user.py	/^from flask import Blueprint, jsonify$/;"	kind:namespace	line:1
+jwt	app.py	/^jwt = JWT(app, user.User.authenticate, user.User.identity)$/;"	kind:variable	line:30
+jwt	controllers/auth.py	/^jwt = JWT()$/;"	kind:variable	line:9
+jwt	controllers/gigs.py	/^jwt = JWT()$/;"	kind:variable	line:9
+jwt	controllers/user.py	/^jwt = JWT()$/;"	kind:variable	line:9
+jwt_required	controllers/auth.py	/^from flask_jwt import JWT, jwt_required, current_identity$/;"	kind:namespace	line:2
+jwt_required	controllers/gigs.py	/^from flask_jwt import JWT, jwt_required, current_identity$/;"	kind:namespace	line:2
+jwt_required	controllers/user.py	/^from flask_jwt import JWT, jwt_required, current_identity$/;"	kind:namespace	line:2
+langauges	models/user.py	/^    langauges = ListField()$/;"	kind:variable	line:70
+lastname	models/user.py	/^    lastname = StringField()$/;"	kind:variable	line:56
+me	controllers/auth.py	/^def me():$/;"	kind:function	line:13
+me_cart	controllers/gigs.py	/^def me_cart():$/;"	kind:function	line:195
+me_wishlist	controllers/gigs.py	/^def me_wishlist():$/;"	kind:function	line:159
+notification_count	models/user.py	/^    notification_count = IntField()$/;"	kind:variable	line:62
+password	models/user.py	/^    password = StringField()$/;"	kind:variable	line:58
+phone_number	models/user.py	/^    phone_number =  StringField()$/;"	kind:variable	line:73
+platform	models/user.py	/^    platform = StringField()$/;"	kind:variable	line:46
+portfolio	models/user.py	/^    portfolio = ListField(EmbeddedDocumentField(UserPortfolio), default=[])$/;"	kind:variable	line:67
+portfolioLinks	models/user.py	/^    portfolioLinks = ListField(EmbeddedDocumentField(ProfileLinks), default=[])$/;"	kind:variable	line:66
+post_gig	controllers/gigs.py	/^def post_gig():$/;"	kind:function	line:13
+postedBy	models/gig.py	/^    postedBy = ReferenceField(User)$/;"	kind:variable	line:20
+postings_count	models/user.py	/^    postings_count = IntField()$/;"	kind:variable	line:61
+price	models/gig.py	/^    price = StringField()$/;"	kind:variable	line:18
+profileCompleteness	models/user.py	/^    profileCompleteness = IntField(default=45)$/;"	kind:variable	line:68
+profilePicture	models/user.py	/^    profilePicture = StringField(default="http:\/\/www.lovemarks.com\/wp-content\/uploads\/profile-avatars\/default-avatar.png")$/;"	kind:variable	line:59
+pwd_context	models/user.py	/^from passlib.apps import custom_app_context as pwd_context$/;"	kind:namespace	line:10
+refresh_token	controllers/auth.py	/^def refresh_token():$/;"	kind:function	line:28
+request	app.py	/^from flask import Flask, jsonify, request$/;"	kind:namespace	line:9
+review_gig	controllers/gigs.py	/^def review_gig(id):$/;"	kind:function	line:82
+signup	controllers/auth.py	/^def signup():$/;"	kind:function	line:36
+skills	models/gig.py	/^    skills = ListField()$/;"	kind:variable	line:22
+skills	models/user.py	/^    skills = ListField()$/;"	kind:variable	line:40
+skills	models/user.py	/^    skills = ListField(default=[])$/;"	kind:variable	line:71
+state	models/user.py	/^    state = StringField()$/;"	kind:variable	line:65
+test	app.py	/^def test():$/;"	kind:function	line:33
+time	models/gig.py	/^    time = IntField()$/;"	kind:variable	line:21
+timedelta	app.py	/^from datetime import timedelta$/;"	kind:namespace	line:7
+title	models/gig.py	/^    title = StringField()$/;"	kind:variable	line:15
+title	models/user.py	/^    title = StringField()$/;"	kind:variable	line:35
+update_gig	controllers/gigs.py	/^def update_gig():$/;"	kind:function	line:37
+upload_file	app.py	/^def upload_file(file):$/;"	kind:function	line:55
+url	models/user.py	/^    url = StringField()$/;"	kind:variable	line:47
+user	app.py	/^from models import user$/;"	kind:namespace	line:14
+user	models/user.py	/^    user = GenericReferenceField()$/;"	kind:variable	line:13
+user	models/user.py	/^    user = GenericReferenceField()$/;"	kind:variable	line:18
+user.py	controllers/user.py	1;"	kind:file	line:1
+user.py	models/user.py	1;"	kind:file	line:1
+userController	app.py	/^from controllers import auth, user as userController, gigs as gigsController$/;"	kind:namespace	line:15
+users	controllers/user.py	/^users = Blueprint('users', __name__)$/;"	kind:variable	line:8
+uuid	app.py	/^import uuid$/;"	kind:namespace	line:6
+zipcode	models/user.py	/^    zipcode = IntField()$/;"	kind:variable	line:72

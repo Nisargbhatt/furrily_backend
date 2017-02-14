@@ -19,12 +19,12 @@ def edit_profile():
     parser.add_argument('city')
     parser.add_argument('state')
     parser.add_argument('country')
-    parser.add_argument('zipcode')
     parser.add_argument('bio')
-    parser.add_argument('langauges')
+    parser.add_argument('langauges', type=list)
     parser.add_argument('skills', type=list)
     parser.add_argument('portfolioLink', type=list)
     parser.add_argument('portfolio', type=list)
+    parser.add_argument('phone_number', type=str)
 
     args = parser.parse_args()
     for argument in args:
@@ -45,16 +45,16 @@ def edit_profile():
                     link[key] = portfolioLink[key]
                 user.portfolioLinks.append(link)
     profileCompleteness = 45
-    if len(user.skills) >= 3:
-        profileCompleteness += 5
+    if len(user.skills) >= 2:
+        profileCompleteness += 10
     if len(user.portfolioLinks) >= 2:
         profileCompleteness += 10
     if len(user.portfolio) >= 2:
         profileCompleteness += 10
-    if user.address:
+    if user.city:
         profileCompleteness += 10
     if user.profilePicture != constants.PROFILE_PICTURE:
-        profileCompleteness += 10
+        profileCompleteness += 15
 
     user.profileCompleteness = profileCompleteness
     user.save()
@@ -91,7 +91,9 @@ def getuser_byId(id):
         'average_ratings' : user.average_ratings,
         'langauges' : user.langauges,
         'skills' : user.skills,
-        'bio' : user.bio
+        'bio' : user.bio,
+        "profileCompleteness" : user.profileCompleteness,
+        "phone_number" : user.phone_number
     }
     portfolioLinks = []
     portfolio = []
@@ -116,3 +118,4 @@ def getuser_byId(id):
     return jsonify({
         "response" : responseObject
     })
+    
